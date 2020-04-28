@@ -22,6 +22,12 @@ const HomeScreen = () => {
     GET_GLOBAL_DATA
   );
 
+  const formatNum = (num) => {
+    let num_parts = num.toString().split('.');
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return num_parts.join('.');
+  };
+
   const [globalDataState] = useState([
     {
       key: '1',
@@ -48,6 +54,8 @@ const HomeScreen = () => {
       color: '#FBBE30',
     },
   ]);
+
+  const [search, setsearch] = useState('');
 
   return (
     <View style={styles.container}>
@@ -77,19 +85,19 @@ const HomeScreen = () => {
             renderItem={({ item }) => (
               <View style={styles.card}>
                 <Text
-                  style={{ color: '#900C3F', fontSize: 15, fontWeight: 'bold' }}
+                  style={{ color: '#ED4430', fontSize: 13, fontWeight: 'bold' }}
                 >
                   {item.title}
                 </Text>
-                <Text style={{ color: item.color, fontSize: 25 }}>
+                <Text style={{ color: item.color, fontSize: 20 }}>
                   {item.title == 'Total Cases'
-                    ? (item.value = globalData.globalTotal.cases)
+                    ? (item.value = formatNum(globalData.globalTotal.cases))
                     : item.title == 'Total Deaths'
-                    ? (item.value = globalData.globalTotal.deaths)
+                    ? (item.value = formatNum(globalData.globalTotal.deaths))
                     : item.title == 'Total Recovered'
-                    ? (item.value = globalData.globalTotal.recovered)
+                    ? (item.value = formatNum(globalData.globalTotal.recovered))
                     : item.title == 'Total Tested'
-                    ? (item.value = globalData.globalTotal.tests)
+                    ? (item.value = formatNum(globalData.globalTotal.tests))
                     : 0}
                 </Text>
               </View>
@@ -97,7 +105,7 @@ const HomeScreen = () => {
           />
         ) : null}
       </View>
-      <View style={{ paddingHorizontal: 10, marginBottom: 60 }}>
+      <View style={{ paddingHorizontal: 10, height: 250 }}>
         <Text style={styles.topCountriesTitle}>Countries with high cases</Text>
         <View style={styles.topCountries}>
           <Text style={{ flex: 7, fontSize: 12, fontWeight: 'bold' }}>
@@ -127,28 +135,32 @@ const HomeScreen = () => {
                 <View style={styles.topCountries}>
                   <View style={{ flex: 2, marginVertical: 5 }}>
                     <Image
-                      style={{ width: 30, height: 20 }}
+                      style={{ width: 25, height: 15 }}
                       source={{ uri: item.countryInfo.flag }}
                     />
                   </View>
                   <View style={{ flex: 5, marginVertical: 5 }}>
-                    <Text style={{ fontSize: 15 }}>{item.country}</Text>
+                    <Text style={{ fontSize: 13 }}>{item.country}</Text>
                   </View>
                   <View style={{ flex: 4, marginVertical: 5 }}>
-                    <Text style={{ fontSize: 15 }}>{item.result.cases}</Text>
-                  </View>
-                  <View style={{ flex: 3, marginVertical: 5 }}>
-                    <Text style={{ fontSize: 15 }}>
-                      {item.result.todayCases}
-                    </Text>
-                  </View>
-                  <View style={{ flex: 4, marginVertical: 5 }}>
-                    <Text style={{ fontSize: 15 }}>
-                      {item.result.recovered}
+                    <Text style={{ fontSize: 13 }}>
+                      {formatNum(item.result.cases)}
                     </Text>
                   </View>
                   <View style={{ flex: 3, marginVertical: 5 }}>
-                    <Text style={{ fontSize: 15 }}>{item.result.deaths}</Text>
+                    <Text style={{ fontSize: 13 }}>
+                      {formatNum(item.result.todayCases)}
+                    </Text>
+                  </View>
+                  <View style={{ flex: 4, marginVertical: 5 }}>
+                    <Text style={{ fontSize: 13 }}>
+                      {formatNum(item.result.recovered)}
+                    </Text>
+                  </View>
+                  <View style={{ flex: 3, marginVertical: 5 }}>
+                    <Text style={{ fontSize: 13 }}>
+                      {formatNum(item.result.deaths)}
+                    </Text>
                   </View>
                 </View>
               )}
@@ -165,15 +177,16 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
+    paddingBottom: 150,
   },
   hero: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 120,
+    height: 100,
   },
   heroBackground: {
     width: '100%',
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   heroText: {
     fontSize: 30,
@@ -188,13 +201,13 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 160,
-    height: 70,
+    height: 50,
     margin: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFF',
     borderColor: '#ED4430',
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 5,
     shadowColor: '#000',
     shadowOffset: {
