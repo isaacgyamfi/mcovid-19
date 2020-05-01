@@ -21,13 +21,13 @@ const header = ({ navigation, title }) => {
         </Text>
       </View>
       <View style={{ flex: 2 }}>
-        <View style={styles.backIcon}>
+        {/* <View style={styles.backIcon}>
           <MaterialCommunityIcons
             name="dots-vertical"
             size={30}
             color="#FFFFFF"
           />
-        </View>
+        </View> */}
       </View>
     </View>
   );
