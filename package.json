@@ -11,6 +11,7 @@
     "@apollo/react-hooks": "^3.1.5",
     "@react-native-community/masked-view": "0.1.6",
     "@react-navigation/bottom-tabs": "^5.2.8",
+    "@react-navigation/material-top-tabs": "^5.1.12",
     "@react-navigation/native": "^5.1.7",
     "@react-navigation/stack": "^5.2.14",
     "apollo-cache-inmemory": "^1.6.5",
@@ -23,12 +24,15 @@
     "react-apollo": "^3.1.5",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    "react-native-chart-kit": "^5.5.0",
     "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-onboarding-swiper": "^1.1.1",
     "react-native-reanimated": "~1.7.0",
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "~2.2.0",
+    "react-native-svg": "11.0.1",
+    "react-native-tab-view": "^2.14.0",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {

@@ -2,12 +2,13 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import HomeScreen from '../screens/HomeScreen';
 import DashboardScreen from '../screens/DashboardScreen';
-import NotificationScreen from '../screens/NotificationScreen';
+import MeasuresScreen from '../screens/MeasuresScreen';
 import SavedScreen from '../screens/SavedScreen';
+import StatisticsScreen from '../screens/StatisticsScreen';
 
 const MainTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -28,10 +29,10 @@ const SavedStack = () => {
     </Stack.Navigator>
   );
 };
-const NotificationStack = () => {
+const MeasuresStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Notification" component={NotificationScreen} />
+      <Stack.Screen name="Notification" component={MeasuresScreen} />
       <Stack.Screen name="Dashboard" component={DashboardScreen} options={{}} />
     </Stack.Navigator>
   );
@@ -61,13 +62,41 @@ const MainTabNavigation = () => {
         }}
       ></MainTab.Screen>
       <MainTab.Screen
-        name="Notification"
-        component={NotificationStack}
+        name="Statistics"
+        component={StatisticsScreen}
         options={{
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
               focused={focused}
-              name="md-notifications"
+              name="md-stats"
+              size={26}
+              color={color}
+            />
+          ),
+        }}
+      ></MainTab.Screen>
+      <MainTab.Screen
+        name="Measures"
+        component={MeasuresStack}
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <FontAwesome
+              focused={focused}
+              name="heartbeat"
+              size={26}
+              color={color}
+            />
+          ),
+        }}
+      ></MainTab.Screen>
+      <MainTab.Screen
+        name="Saved"
+        component={SavedScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              focused={focused}
+              name="md-bookmark"
               size={26}
               color={color}
             />
