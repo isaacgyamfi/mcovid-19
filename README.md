@@ -4,6 +4,9 @@ mCOVID is mobile application built with React Native that gives real-time update
 
 ## Getting Started
 
+
+### How to setup on your local machine
+
 These instructions will get you a copy of the project up and running on your local machine for development. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
