@@ -4,6 +4,15 @@ mCOVID is mobile application built with React Native that gives real-time update
 
 ## Getting Started
 
+### ID: 10661943
+### Expo username
+```
+isaacgyamfi
+```
+### Expo password
+```
+bohyeba123
+```
 
 ### How to setup on your local machine
 
