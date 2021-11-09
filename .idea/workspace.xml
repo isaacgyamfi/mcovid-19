@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd3ff5e8-ac06-41d3-b879-bcc36958049f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/mcovid-19.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn-error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635845136571</updated>
       <workItem from="1635845139094" duration="686000" />
+      <workItem from="1636473278643" duration="115000" />
     </task>
     <servers />
   </component>
