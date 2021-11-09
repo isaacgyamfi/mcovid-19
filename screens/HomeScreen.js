@@ -7,7 +7,6 @@ import {
   ImageBackground,
   TouchableOpacity,
   ActivityIndicator,
-  Picker,
 } from 'react-native';
 import { AntDesign, Feather } from '@expo/vector-icons';
 
@@ -19,11 +18,11 @@ import {
   communicate,
   statsData,
 } from '../components/global';
+import { Picker } from '@react-native-picker/picker';
 
 const HomeScreen = ({ navigation }) => {
-  const { data: globalData, loading: globalDataLoading } = useQuery(
-    GET_GLOBAL_DATA
-  );
+  const { data: globalData, loading: globalDataLoading } =
+    useQuery(GET_GLOBAL_DATA);
 
   const [search, setsearch] = useState('');
 

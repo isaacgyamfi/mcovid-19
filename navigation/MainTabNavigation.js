@@ -68,7 +68,7 @@ const MainTabNavigation = () => {
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
               focused={focused}
-              name="md-stats"
+              name="md-stats-chart"
               size={26}
               color={color}
             />
